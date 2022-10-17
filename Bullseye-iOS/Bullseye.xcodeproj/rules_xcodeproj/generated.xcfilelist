@@ -1,0 +1,2 @@
+$(BAZEL_OUT)/applebin_ios-ios_sim_arm64-dbg-ST-e8cf74a10fda/bin/Bullseye-iOS/rules_xcodeproj/iostests.__internal__.__test_bundle/Info.plist
+$(BAZEL_OUT)/applebin_ios-ios_sim_arm64-dbg-ST-e8cf74a10fda/bin/Bullseye-iOS/rules_xcodeproj/myfirstapp/Info.plist

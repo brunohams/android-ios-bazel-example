@@ -1,6 +1,10 @@
 load("@build_bazel_rules_apple//apple:ios.bzl", "ios_application", "ios_unit_test")
 load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
-
+load(
+    "@com_github_buildbuddy_io_rules_xcodeproj//xcodeproj:defs.bzl",
+    "top_level_target",
+    "xcodeproj",
+)
 MINIMUM_OS_VERSION = "14.0"
 
 swift_library(
@@ -38,4 +42,13 @@ ios_application(
     minimum_os_version = MINIMUM_OS_VERSION,
     deps = [":sources"],
     visibility = ["//visibility:public"],
+)
+
+xcodeproj(
+    name = "xcodeproj",
+    project_name = "Bullseye",
+    top_level_targets = [
+        top_level_target(":myfirstapp", target_environments = ["simulator"]),
+        ":iostests",
+    ],
 )
